@@ -1,11 +1,24 @@
+import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import ArticleList from '../components/ArticleList'
-import Loading from '../components/Loading'
-import useFetch from '../functions/useFetch'
+// import Loading from '../components/Loading'
+import { getArticles } from '../services'
 
 const Articles = () => {
-	const { error, isPending, data: articles } = useFetch('api/articles')
+	const [ articles, setArticles ] = useState() 
+	// const [loading, setLoading] = useState(false)
+	const [error, setError] = useState('')
 
+	useEffect(async () => {
+		// setLoading(true)
+		try {
+			setArticles(await getArticles())
+		} catch (error) {
+			setError('Failed')
+		}
+		// setLoading(false)
+	}, [])
+	
 	return (
 		<div className="container">
 			<Helmet>
@@ -13,12 +26,7 @@ const Articles = () => {
 			</Helmet>
 			<div>
 				{error && <div className="mt-4 text-center">{error}</div>}
-				{isPending && (
-					<div className="mt-4 text-center">
-						<Loading />
-					</div>
-				)}
-				{articles && <ArticleList articles={articles} />}
+				{articles && <ArticleList articles={articles}/>}
 			</div>
 		</div>
 	)

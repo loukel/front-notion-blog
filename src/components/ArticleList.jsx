@@ -1,49 +1,34 @@
-import { Link } from 'react-router-dom'
-import { getDisplayDate } from '../functions/functions'
+// import { Link } from 'react-router-dom'
+// import { getDisplayDate } from '../functions/functions'
+
+import { Badge, Carousel } from 'react-bootstrap'
 
 const ArticleList = ({ articles }) => {
 	return (
-		<div className="row">
-			{articles.map((article) => (
-				<div className="col-lg-4 py-2" key={article.slug}>
-					<Link to={`/Articles/${article.slug}`}>
-						<div className="card bg-dark text-white">
-							<img
-								className="card-img"
-								src={`/storage/images/articles/${article.id}.jpg`}
-								alt="Cover Image"
-								style={{
-									filter: 'brightness(60%)',
-									height: '280px',
-								}}
-							/>
-							<div className="card-img-overlay">
-								<h5 className="card-title"> {article.title} </h5>
-								<p className="card-text"> {article.description} </p>
-								<p className="card-text mb-0">
-									{getDisplayDate(article.published_date)}
-								</p>
-								<div className="d-flex flex-wrap">
-									{article['categories'].slice(0, 4).map((category) => (
-										<span
-											className="category p-2 mr-2 mt-2"
-											title={category.description}
-											style={{
-												color: category.font_color,
-												background: category.background,
-												whiteSpace: 'nowrap',
-											}}
-											key={category.name}
-										>
-											{category.name}
-										</span>
-									))}
-								</div>
+		<div className="row d-flex justify-content-center">
+			<Carousel>
+				{articles.map((article) => (
+					<Carousel.Item key={article.id} className='position-relative'>
+						<img
+							className="d-block w-100 cover"
+							src={article.image}
+							alt={article.title}
+						/>
+						<Carousel.Caption>
+							<h3>{article.title}</h3>
+							<p>{article.description}</p>
+							<div className='m-0'>
+								{/* Get working with colors */}
+								{article.tags.map((tag) => (
+									<span key={tag.name}>
+										<Badge style={{ background: '#97883F'}}>{tag.name}</Badge>
+									</span>
+								))}
 							</div>
-						</div>
-					</Link>
-				</div>
-			))}
+						</Carousel.Caption>
+					</Carousel.Item>
+				))}
+			</Carousel>
 		</div>
 	)
 }

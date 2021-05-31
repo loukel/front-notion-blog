@@ -1,5 +1,17 @@
-.categories {
-  .category {
-    overflow: visible;
+.carousel {
+  min-width: 100%;
+  @media (min-width: 1200px) {
+    min-width: 80%;
+    max-width: 80%;
   }
+}
+
+.carousel img {
+  filter: brightness(80%);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.carousel .badge {
+  z-index: 1 !important;
 }
