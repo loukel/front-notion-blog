@@ -3,7 +3,7 @@ import Articles from './pages/Articles'
 import Profile from './pages/Profile'
 import Navbar from './components/Navbar'
 import NotFound from './pages/NotFound'
-import ArticleShow from './pages/ArticleShow'
+import Article from './pages/Article'
 
 function App() {
 	return (
@@ -15,11 +15,11 @@ function App() {
 						<Route exact path="/">
 							<Profile />
 						</Route>
-						<Route exact path="/Articles">
+						<Route exact path="/articles">
 							<Articles />
 						</Route>
-						<Route path="/Articles/:slug">
-							<ArticleShow />
+						<Route path="/articles/:slug">
+							<Article />
 						</Route>
 						<Route path="*">
 							<NotFound />

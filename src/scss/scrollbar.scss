@@ -1,0 +1,30 @@
+// Scrollbar
+html {
+  scroll-behavior: smooth;
+  margin-left: calc(100vw - 100%);
+  scrollbar-color: #525252 #414141 !important;
+}
+::-webkit-scrollbar {
+  width: 13px;
+  height: 3px;
+}
+::-webkit-scrollbar-button {
+  background-color: #666;
+}
+::-webkit-scrollbar-track {
+  background-color: #414141;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #313131;
+}
+::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: #666;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-corner {
+  background-color: #646464;
+}
+::-webkit-resizer {
+  background-color: #666;
+}

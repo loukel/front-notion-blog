@@ -1,0 +1,26 @@
+.certificate {
+  max-height: 250px !important;
+  width: auto;
+  border: 1px solid black;
+}
+
+.book-cover {
+  max-height: 175px !important;
+  width: auto;
+}
+
+@media (min-width: 1200px) {
+  .books {
+    display: flex;
+    justify-content: space-between;
+  }
+  .book-cover {
+    max-height: 200px !important;
+  }
+
+  .certificates {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0 !important;
+  }
+}

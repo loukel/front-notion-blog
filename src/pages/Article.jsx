@@ -9,7 +9,7 @@ import NotFound from './NotFound'
 import Links from '../components/Links'
 import { Image } from 'react-bootstrap'
 
-const ArticleShow = () => {
+const Article = () => {
 	const { slug } = useParams()
 	const { data, error, isPending } = useFetch(`../api/articles/${slug}`)
 
@@ -92,4 +92,4 @@ const ArticleShow = () => {
 	)
 }
 
-export default ArticleShow
+export default Article
