@@ -1,7 +1,7 @@
 /* Article */
 .about {
   margin-top: 10px;
-  background: #ca3e47;
+  background: $red;
 }
 
 .card-img {
@@ -40,7 +40,7 @@ a i {
 }
 
 code {
-  color: #ca3e47 !important;
+  color: $red !important;
 }
 
 @media (min-width: 768px) {
