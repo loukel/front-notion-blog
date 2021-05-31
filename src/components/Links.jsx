@@ -1,3 +1,6 @@
+import { Image } from 'react-bootstrap'
+import icons from './Icons'
+
 const Links = () => {
 	return (
 		<div className="p-3">
@@ -5,7 +8,7 @@ const Links = () => {
 			<ol className="list-unstyled mb-0">
 				<li className="mb-2">
 					<a href="https://github.com/loukel" target="_blank" rel="noreferrer">
-						<i className="fab fa-github mr-2 bg-dark"> </i>
+						<Image src={icons.github} className='icon-md mr-2 github'/>
             loukel
 					</a>
 				</li>
@@ -15,13 +18,13 @@ const Links = () => {
 						target="_blank"
 						rel="noreferrer"
 					>
-						<i className="fab fa-discord mr-2"> </i>
+						<Image src={icons.discord} className='icon-md mr-2'/>
             Louis#7086
 					</a>
 				</li>
 				<li className="mb-2">
 					<a href="https://twitter.com/has_freedom" target="_blank" rel="noreferrer">
-						<i className="fab fa-twitter mr-2"></i>
+						<Image src={icons.twitter} className='icon-md mr-2'/>
             has_freedom
 					</a>
 				</li>

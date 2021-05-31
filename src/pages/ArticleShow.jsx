@@ -7,6 +7,7 @@ import useReload from '../functions/useReload'
 import { getDisplayDate } from '../functions/functions'
 import NotFound from './NotFound'
 import Links from '../components/Links'
+import { Image } from 'react-bootstrap'
 
 const ArticleShow = () => {
 	const { slug } = useParams()
@@ -77,7 +78,7 @@ const ArticleShow = () => {
 									<p className="mb-0">{article.description}</p>
 								</div>
 							)}
-							<img
+							<Image
 								src={`/storage/images/articles/${article.id}.jpg`}
 								className="rounded card-img"
 								alt="Cover Image"

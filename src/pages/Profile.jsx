@@ -1,13 +1,10 @@
 import { Helmet } from 'react-helmet'
 import Links from '../components/Links'
 import ReadingShelf from '../components/ReadingShelf'
+import { Image } from 'react-bootstrap'
+import icons from '../components/Icons'
 
 const Home = () => {
-	/**
-   * Explain tech exp
-   * Bio complete
-   */
-
 	return (
 		<div className="container">
 			<Helmet>
@@ -37,31 +34,32 @@ const Home = () => {
 						<ul className="fa-ul">
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-laravel"></i>
+									<Image src={icons.laravel} className='icon-sm'/>
 								</span>
                 Laravel
 							</li>
 							<li>
 								<span className="fa-li">
-									{/* <i className="fab fa-php"></i> */}
-                  🐘
+									<Image src={icons.php} className='icon-sm'/>
 								</span>
                 PHP
 							</li>
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-node-js"></i>
+									<Image src={icons.node} className='icon-sm'/>
 								</span>
                 Node.js
 							</li>
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-js"></i>
+									<Image src={icons.express} className='icon-sm'/>
 								</span>
                 Express.js
 							</li>
 							<li>
-								<span className="fa-li">⚫</span>
+								<span className="fa-li">
+									<Image src={icons.prisma} className='icon-sm'/>
+								</span>
                 Prisma.js
 							</li>
 						</ul>
@@ -71,31 +69,31 @@ const Home = () => {
 						<ul className="fa-ul">
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-html5"></i>
+									<Image src={icons.html} className='icon-sm'/>
 								</span>
                 HTML & CSS
 							</li>
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-js"></i>
+									<Image src={icons.js} className='icon-sm'/>
 								</span>
                 JavaScript
 							</li>
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-react"></i>
+									<Image src={icons.react} className='icon-md'/>
 								</span>
                 React
 							</li>
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-sass"></i>
+									<Image src={icons.sass} className='icon-sm'/>
 								</span>
                 SASS
 							</li>
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-bootstrap"></i>
+									<Image src={icons.bootstrap} className='icon-sm'/>
 								</span>
                 Bootstrap
 							</li>
@@ -106,18 +104,20 @@ const Home = () => {
 						<ul className="fa-ul">
 							<li>
 								<span className="fa-li">
-									<i className="fas fa-database"></i>
+									<Image src={icons.mySQL} className='icon-sm'/>
 								</span>
                 MySQL
 							</li>
 							<li>
 								<span className="fa-li">
-									<i className="fas fa-leaf"></i>
+									<Image src={icons.mongo} className='icon-sm'/>
 								</span>
                 MongoDB
 							</li>
 							<li>
-								<span className="fa-li">🐘</span>
+								<span className="fa-li">
+									<Image src={icons.postgres} className='icon-sm'/>
+								</span>
                 PostgreSQL
 							</li>
 						</ul>
@@ -129,15 +129,21 @@ const Home = () => {
 						<ul className="fa-ul">
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-digital-ocean"></i>
+									<Image src={icons.digitalOcean} className='icon-sm'/>
 								</span>
                 Digital Ocean Droplets (Ubuntu)
 							</li>
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-raspberry-pi"></i>
+									<Image src={icons.raspberryPi} className='icon-sm'/>
 								</span>
                 Raspberry Pi
+							</li>
+							<li>
+								<span className="fa-li">
+									<Image src={icons.heroku} className='icon-sm'/>
+								</span>
+								Heroku
 							</li>
 						</ul>
 					</div>
@@ -146,38 +152,44 @@ const Home = () => {
 						<ul className="fa-ul">
 							<li>
 								<span className="fa-li">
-									<i className="fas fa-keyboard"></i>
+									<Image src={icons.vscode} className='icon-sm'/>
 								</span>
                 Visual Studio Code
 							</li>
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-github"></i>
+									<Image src={icons.github} className='icon-md'/>
 								</span>
-                GitHub's Version Control
+                GitHub (Git Flow)
 							</li>
 							<li>
-								<span className="fa-li">🐍</span>
+								<span className="fa-li">
+									<Image src={icons.python} className='icon-sm'/>
+								</span>
                 Python
 							</li>
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-windows"></i>
+									<Image src={icons.visualBasic} className='icon-sm'/>
 								</span>
                 Visual Basic.net
 							</li>
 							<li>
 								<span className="fa-li">
-									<i className="fab fa-unity"></i>
+									<Image src={icons.unity} className='icon-md'/>
 								</span>
                 Unity with C#
 							</li>
 							<li>
-								<span className="fa-li">🖥️</span>
+								<span className="fa-li">
+									<Image src={icons.cpp} className='icon-sm'/>
+								</span>
                 C++
 							</li>
 							<li>
-								<span className="fa-li">🔥</span>
+								<span className="fa-li">
+									<Image src={icons.firebase} className='icon-sm'/>
+								</span>
                 Firebase
 							</li>
 						</ul>

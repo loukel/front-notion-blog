@@ -5,6 +5,12 @@
     #ca3e47
   */
 
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap");
+
+* {
+  font-family: 'Cabin', sans-serif !important;
+}
+
 // Scrollbar
 html {
   scroll-behavior: smooth;
@@ -161,110 +167,6 @@ a i {
 
 code {
   color: #ca3e47 !important;
-}
-
-// Font Awesome
-.fa-ul {
-  margin: 0 !important;
-  margin-left: 10px !important;
-}
-
-.fa-github {
-  color: #fff;
-}
-
-.fa-discord {
-  color: #8a9cfe;
-}
-
-.fa-discord:before {
-  background-image: linear-gradient(#fff, #fff);
-  background-repeat: no-repeat;
-  background-size: 75% 65%;
-  background-position: center;
-}
-
-.fa-twitter {
-  color: #00a2f3;
-}
-
-.fa-envelope {
-  color: #fff;
-}
-
-.fa-laravel {
-  color: #ff2d20;
-}
-
-.fa-php {
-  color: #858eb8;
-}
-
-.fa-node-js {
-  color: #68a063;
-}
-
-.fa-html5 {
-  color: #f4470b;
-}
-
-.fa-js {
-  color: #e9d44d;
-}
-
-.fa-heart {
-  color: red;
-  font-size: 0.8rem;
-}
-
-.fa-react {
-  color: #5ed3f3;
-}
-
-.fa-sass {
-  color: #c66092;
-}
-
-.fa-bootstrap {
-  color: #613f8e;
-}
-
-.fa-bootstrap:before {
-  background-image: linear-gradient(#fff, #fff);
-  background-repeat: no-repeat;
-  background-size: 75% 65%;
-  background-position: center;
-}
-
-.fa-database {
-  color: #3194d4;
-}
-
-.fa-leaf {
-  color: green;
-}
-
-.fa-digital-ocean {
-  color: #007cf7;
-}
-
-.fa-raspberry-pi {
-  color: #cf254d;
-}
-
-.fa-windows {
-  color: #825cbf;
-}
-
-.fa-unity {
-  color: black;
-}
-
-.fa-unity:before {
-  background-image: linear-gradient(#fff, #fff);
-  background-repeat: no-repeat;
-  background-size: 50% 50%;
-  background-position: center;
 }
 
 /* Keyframes / Animations / Transitions */
