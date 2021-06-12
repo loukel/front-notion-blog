@@ -1,33 +1,32 @@
-import { useParams } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
-import useFetch from '../functions/useFetch'
-import Loading from '../components/Loading'
 import { useEffect, useState } from 'react'
-import useReload from '../functions/useReload'
-import { getDisplayDate } from '../functions/functions'
-import NotFound from './NotFound'
-import Links from '../components/Links'
 import { Image } from 'react-bootstrap'
+import { useParams } from 'react-router-dom'
+import { getArticle } from '../services'
+import { Helmet } from 'react-helmet'
+// import NotFound from './NotFound'
+import Loading from '../components/Loading'
+import Links from '../components/Links'
+// import { getDisplayDate } from '../functions/getDisplayDate'
 
 const Article = () => {
 	const { slug } = useParams()
-	const { data, error, isPending } = useFetch(`../api/articles/${slug}`)
-
-	useEffect(() => {
-		if (data) {
-			setArticle(data[0])
-			setCategories(data.splice(1))
-		}
-	}, [data])
 
 	const [article, setArticle] = useState('')
-	const [categories, setCategories] = useState('')
+
+	const [loading, setLoading] = useState(false)
+
+	useEffect(async () => {
+		setLoading(true) 
+		setArticle(await getArticle(slug))
+		setLoading(false)
+	}, [])
 
 	useEffect(() => {
 		if (article) {
-			document.getElementById('article').innerHTML += article.body_html
-			useReload('../../js/components.js')
+			document.getElementById('article').innerHTML += article.page
+			// useReload('../../js/components.js')
 		}
+		console.log(article)
 	}, [article])
 
 	return (
@@ -37,8 +36,8 @@ const Article = () => {
 					<title>{article.title}</title>
 				</Helmet>
 			)}
-			{error && <NotFound />}
-			{isPending && (
+			{/* {error && <NotFound />} */}
+			{loading && (
 				<div className="mt-4 text-center">
 					<Loading />
 				</div>
@@ -48,9 +47,9 @@ const Article = () => {
 					<div className="col-md-8 article-main">
 						<div className="article" id="article">
 							<h2 className="article-title">{article.title}</h2>
-							{getDisplayDate(article.published_date)}
+							{/* {getDisplayDate(article.updated_date)} */}
 							<p className="article-meta d-flex flex-wrap">
-								{/* Published date, updated date, tags, read time */}
+								{/* Published date, updated date, tags, read time
 								{categories &&
                   categories.map((category) => (
                   	<span
@@ -65,7 +64,7 @@ const Article = () => {
                   	>
                   		{category.name}
                   	</span>
-                  ))}
+                  ))} */}
 							</p>
 						</div>
 					</div>
@@ -79,7 +78,7 @@ const Article = () => {
 								</div>
 							)}
 							<Image
-								src={`/storage/images/articles/${article.id}.jpg`}
+								src={article.image}
 								className="rounded card-img"
 								alt="Cover Image"
 							/>
