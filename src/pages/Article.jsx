@@ -6,13 +6,13 @@ import { Helmet } from 'react-helmet'
 // import NotFound from './NotFound'
 import Loading from '../components/Loading'
 import Links from '../components/Links'
+import { getDisplayDate } from '../functions/getDisplayDate'
 // import { getDisplayDate } from '../functions/getDisplayDate'
 
 const Article = () => {
 	const { slug } = useParams()
 
 	const [article, setArticle] = useState('')
-
 	const [loading, setLoading] = useState(false)
 
 	useEffect(async () => {
@@ -23,10 +23,9 @@ const Article = () => {
 
 	useEffect(() => {
 		if (article) {
-			document.getElementById('article').innerHTML += article.page
-			// useReload('../../js/components.js')
+			// Add html to the page, this enables html to be read
+			document.getElementById('article').innerHTML = article.page
 		}
-		console.log(article)
 	}, [article])
 
 	return (
@@ -45,13 +44,12 @@ const Article = () => {
 			{article && (
 				<div className="row">
 					<div className="col-md-8 article-main">
-						<div className="article" id="article">
+						<div className="article">
 							<h2 className="article-title">{article.title}</h2>
-							{/* {getDisplayDate(article.updated_date)} */}
+							{getDisplayDate(article.last_edited_time)}
 							<p className="article-meta d-flex flex-wrap">
-								{/* Published date, updated date, tags, read time
-								{categories &&
-                  categories.map((category) => (
+								{/* Published date, updated date, tags, read time */}
+								{article.tags.map((category) => (
                   	<span
                   		className="category p-2 mr-2 mt-2"
                   		title={category.description}
@@ -64,8 +62,9 @@ const Article = () => {
                   	>
                   		{category.name}
                   	</span>
-                  ))} */}
+								))}
 							</p>
+							<div id="article"></div>
 						</div>
 					</div>
 

@@ -19,7 +19,7 @@ const months = {
  * @returns {string} date formatted like 23 January 2019
  */
 const getDisplayDate = (date) => {
-	var d = new Date(date.slice(0, 10).replace(/-/g, '/'))
+	var d = new Date(date)
 
 	const day = d.getDate()
 	const month = months[d.getMonth()]
