@@ -1,9 +1,10 @@
 const axios = require('axios')
+const baseUrl = process.env.REACT_APP_API
 
 const getArticles = async () => {
 	const res = await axios({
 		method: 'GET',
-		url: 'http://localhost:3001/articles'
+		url: `${baseUrl}/articles`
 	})
 
 	return res.data
@@ -11,7 +12,7 @@ const getArticles = async () => {
 const getArticle = async (slug) => {
 	const res = await axios({
 		method: 'GET',
-		url: `http://localhost:3001/articles/${slug}`
+		url: `${baseUrl}/articles/${slug}`
 	})
 
 	return res.data
