@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet'
 import Links from '../components/Links'
-import ReadingShelf from '../components/ReadingShelf'
 import { Image } from 'react-bootstrap'
 import icons from '../components/Icons'
 
@@ -234,7 +233,6 @@ const Home = () => {
 							/>
 						</div>
 					</div>
-					<ReadingShelf />
 				</div>
 				<div className="p-3">
 					<h3 className="text-center mt-3">Certificates</h3>
