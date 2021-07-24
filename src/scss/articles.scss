@@ -1,9 +1,5 @@
 .carousel {
   min-width: 100%;
-  @media (min-width: 1200px) {
-    min-width: 80%;
-    max-width: 80%;
-  }
 }
 
 .carousel img {
@@ -18,5 +14,5 @@
 
 .carousel a {
   text-decoration: none;
-  color: inherit !important
+  color: inherit !important;
 }
